@@ -4,7 +4,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import android.util.Log;
 import org.json.JSONObject;
 
 public class NewsRestApi {
@@ -19,14 +18,12 @@ public class NewsRestApi {
                 Request.Method.GET, baseUrl + api, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.e("Rest Response", response.toString());
-//                System.out.println(response.toString());
+                System.out.println(response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("Rest Response", error.toString());
-//                System.out.println(error.toString());
+                System.out.println(error);
             }
         }
         );
