@@ -2,6 +2,9 @@ package com.example.newsfeed;
 
 import android.os.Bundle;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -20,6 +23,20 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        // 3 tasks to call a REST API
+        // 1. create a request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        // 2. construct request - code found in newsRestApi.getNews()
+        NewsRestApi newsRestApi = new NewsRestApi();
+        JsonObjectRequest jsonObjectRequest = newsRestApi.getNews();
+
+        // 3. add request to request queue
+        requestQueue.add(jsonObjectRequest);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
