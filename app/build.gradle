@@ -28,7 +28,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //added 'com.android.volley:volley:1.1.0' - dependency for sending requests
-    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.android.volley:volley:1.1.1'
     //'com/google.code.gson:gson:2.4' - renders java objects as gson
 //    compile 'com/google.code.gson:gson:2.4'
 }
