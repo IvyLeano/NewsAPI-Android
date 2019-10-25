@@ -10,7 +10,7 @@ import org.json.JSONObject;
 
 public class NewsRestApi {
 
-    NewsData[] newsData;
+    Vector newsData = new Vector();
 
     public JsonObjectRequest getNews(){
         String baseUrl = "https://newsapi.org/v2/sources?language=en&apiKey=";
@@ -41,19 +41,21 @@ public class NewsRestApi {
 
     public void populateNewsDataArray(JSONArray objects){
         for(int i = 0; i < objects.length(); i++){
-            NewsData newsData = new NewsData();
             try {
+                NewsData newsData = new NewsData();
                 newsData.setData(objects.getJSONObject(i));
-                this.newsData[i] = newsData;
+                this.newsData.add(newsData);
             } catch (Exception e){
                 System.out.println("Logged from populateNewsDataArray() in NewsRestApi.java: " + e);
             }
         }
+        getNewsDataArray();
     }
 
     public void getNewsDataArray(){
-        for(int i = 0; i < newsData.length; i++){
-            System.out.println("************ id: " + newsData[i].getId());
+        for(int i = 0; i < newsData.size(); i++){
+            NewsData x = new NewsData();
+            x = (NewsData) newsData.get(i);
         }
     }
 }
