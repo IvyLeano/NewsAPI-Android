@@ -52,10 +52,11 @@ public class NewsRestApi {
         getNewsDataArray();
     }
 
-    public void getNewsDataArray(){
-        for(int i = 0; i < newsData.size(); i++){
-            NewsData x = new NewsData();
-            x = (NewsData) newsData.get(i);
-        }
+    public Vector getNewsDataArray(){
+//        for(int i = 0; i < newsData.size(); i++){
+//            NewsData x = new NewsData();
+//            x = (NewsData) newsData.get(i);
+//        }
+        return newsData;
     }
 }
