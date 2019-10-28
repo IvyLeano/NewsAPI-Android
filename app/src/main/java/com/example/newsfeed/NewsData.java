@@ -4,23 +4,23 @@ import org.json.JSONObject;
 
 public class NewsData {
         private String id;
+        private String title;
         private String name;
+        private String author;
+        private String urlToImage;
         private String description;
         private String url;
-        private String category;
-        private String language;
-        private String country;
 
         //Setter method
         public void setData(JSONObject object){
             try {
-                this.id = object.getString("id");
-                this.name = object.getString("name");
+                this.id = object.getJSONObject("source").getString("id");
+                this.title = object.getString("title");
+                this.name = object.getJSONObject("source").getString("name");
+                this.author = object.getString("author");
+                this.urlToImage = object.getString("UrlToImage");
                 this.description = object.getString("description");
                 this.url = object.getString("url");
-                this.category = object.getString("category");
-                this.language = object.getString("language");
-                this.category = object.getString("country");
             } catch(Exception e) {
                 System.out.println("Logged from setData() in NewsData.java " + e);
             }
@@ -29,22 +29,16 @@ public class NewsData {
         public String getId(){
             return this.id;
         }
+        public String getTitle(){
+        return this.title;
+    }
         public String getName(){
             return this.name;
         }
+        public String getAuthor(){ return this.author; }
+        public String getUrlToImage(){ return this.urlToImage; }
         public String getDescription(){
-            return this.description;
-        }
-        public String getUrl(){
-            return this.url;
-        }
-        public String getCategory(){
-            return this.category;
-        }
-        public String getLanguage(){
-            return this.language;
-        }
-        public String getCountry(){
-            return this.country;
-        }
+        return this.description;
+    }
+        public String getUrl(){ return this.url; }
     }

@@ -32,7 +32,6 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView view = findViewById(R.id.view);
 
         // 3 tasks to call a REST API
         // 1. create a request queue
@@ -45,13 +44,21 @@ public class ScrollingActivity extends AppCompatActivity {
         // 3. add request to request queue
         requestQueue.add(jsonObjectRequest);
 
-    }
-    public void createViewList(){
-        //TODO:
-        // 1. create a linear layout for each news object
-        // 2. add() that object to this.viewList vector
-        // 3. add each of those layouts to the TextView
-    }
+
+        // Creating Views
+       // 1. create a LinearLayout
+        LinearLayout layout = new LinearLayout(this);
+
+        // 2. create a TextView
+        TextView view = new TextView(this);
+        view.setText("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+
+        // 3. add TextView to LinearLayout
+        layout.addView(view);
+
+        // 4. add LinearLayout to ContentView
+        setContentView(layout);
 
 
+    }
 }

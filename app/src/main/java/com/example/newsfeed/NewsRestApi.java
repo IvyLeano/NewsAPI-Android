@@ -13,7 +13,8 @@ public class NewsRestApi {
     Vector newsData = new Vector();
 
     public JsonObjectRequest getNews(){
-        String baseUrl = "https://newsapi.org/v2/sources?language=en&apiKey=";
+
+        String baseUrl = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=";
         String api = "ea59d14adf274f3294daa1fbae58ae92";
 
         // 2. construct request
@@ -24,7 +25,7 @@ public class NewsRestApi {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    populateNewsDataArray(response.getJSONArray("sources"));
+                    populateNewsDataArray(response.getJSONArray("articles"));
                 } catch (Exception e){
                    System.out.println("Logged from JsonObjectRequest() in NewsRestApi.java: " + e);
                 }
@@ -53,10 +54,10 @@ public class NewsRestApi {
     }
 
     public Vector getNewsDataArray(){
-//        for(int i = 0; i < newsData.size(); i++){
-//            NewsData x = new NewsData();
-//            x = (NewsData) newsData.get(i);
-//        }
+        for(int i = 0; i < newsData.size(); i++){
+            NewsData x = new NewsData();
+            x = (NewsData) newsData.get(i);
+        }
         return newsData;
     }
 }
