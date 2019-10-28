@@ -18,7 +18,7 @@ public class NewsData {
                 this.title = object.getString("title");
                 this.name = object.getJSONObject("source").getString("name");
                 this.author = object.getString("author");
-                this.urlToImage = object.getString("UrlToImage");
+                this.urlToImage = object.getString("urlToImage");
                 this.description = object.getString("description");
                 this.url = object.getString("url");
             } catch(Exception e) {

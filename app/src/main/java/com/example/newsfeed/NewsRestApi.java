@@ -54,10 +54,6 @@ public class NewsRestApi {
     }
 
     public Vector getNewsDataArray(){
-        for(int i = 0; i < newsData.size(); i++){
-            NewsData x = new NewsData();
-            x = (NewsData) newsData.get(i);
-        }
-        return newsData;
+        return this.newsData;
     }
 }

@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Vector;
 
 public class ScrollingActivity extends AppCompatActivity {
-    Vector viewList = new Vector();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,21 +43,24 @@ public class ScrollingActivity extends AppCompatActivity {
         // 3. add request to request queue
         requestQueue.add(jsonObjectRequest);
 
-
         // Creating Views
-       // 1. create a LinearLayout
-        LinearLayout layout = new LinearLayout(this);
-
-        // 2. create a TextView
-        TextView view = new TextView(this);
-        view.setText("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-
-        // 3. add TextView to LinearLayout
-        layout.addView(view);
-
-        // 4. add LinearLayout to ContentView
-        setContentView(layout);
-
-
+//        for(int i = 0; i < newsRestApi.getNewsDataArray().size(); i++) {
+//
+//            NewsData newsData = (NewsData)newsRestApi.getNewsDataArray().get(i);
+//            System.out.println("!!!!!!!!!!!!!!!! " + newsData.);
+//
+//            // 1. create a LinearLayout
+//            LinearLayout layout = new LinearLayout(this);
+//
+//            // 2. create a TextView for the heading
+//            TextView heading = new TextView(this);
+//            heading.setText(newsData.getTitle());
+//
+//            // 3. add TextView to LinearLayout
+//            layout.addView(heading);
+//
+//            // 4. add LinearLayout to ContentView
+//            setContentView(layout);
+//        }
     }
 }
