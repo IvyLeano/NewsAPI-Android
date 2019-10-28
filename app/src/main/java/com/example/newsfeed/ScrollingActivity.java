@@ -1,5 +1,8 @@
 package com.example.newsfeed;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.LinearLayout;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -11,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.util.Vector;
+import android.widget.TextView;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -58,8 +62,19 @@ public class ScrollingActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
     public void setView(Vector data){
+        LinearLayout linearLayout = findViewById(R.id.linear_layout);
 
+        for (int i = 0; i < data.size(); i++) {
+            NewsData newsData = (NewsData) data.get(i);
 
+            TextView title = new TextView(this);
+            title.setText(newsData.getTitle());
+            title.setTextSize(20);
+            title.setTypeface(null, Typeface.BOLD);
+            linearLayout.addView(title);
+
+            
+        }
     }
 }
 
