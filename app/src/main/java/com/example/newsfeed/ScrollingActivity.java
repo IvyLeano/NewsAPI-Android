@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -98,7 +99,9 @@ public class ScrollingActivity extends AppCompatActivity {
             linearLayout.addView(author);
 
             ImageView imageView = new ImageView(this);
+            LinearLayout.LayoutParams parameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 310);
             Picasso.get().load(newsData.getUrlToImage()).into(imageView);
+            imageView.setLayoutParams(parameters);
             linearLayout.addView(imageView);
 
             TextView description = new TextView(this);
