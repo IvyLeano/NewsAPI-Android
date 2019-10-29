@@ -16,7 +16,4 @@
         tools:context=".MainActivity"
         android:orientation="vertical"
         android:layout_margin="10dp" />
-
-
-
 </androidx.core.widget.NestedScrollView>

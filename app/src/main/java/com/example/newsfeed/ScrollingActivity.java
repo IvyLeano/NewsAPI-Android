@@ -2,9 +2,11 @@ package com.example.newsfeed;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Layout;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
