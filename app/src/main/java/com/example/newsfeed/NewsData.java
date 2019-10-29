@@ -31,7 +31,7 @@ public class NewsData {
         }
         public String getTitle(){
         return this.title;
-    }
+        }
         public String getName(){
             return this.name;
         }
