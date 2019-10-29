@@ -30,15 +30,21 @@ public class NewsData {
             return this.id;
         }
         public String getTitle(){
-        return this.title;
+            return this.title;
         }
         public String getName(){
             return this.name;
         }
-        public String getAuthor(){ return this.author; }
-        public String getUrlToImage(){ return this.urlToImage; }
+        public String getAuthor(){ 
+            return this.author; 
+        }
+        public String getUrlToImage(){ 
+            return this.urlToImage; 
+        }
         public String getDescription(){
-        return this.description;
-    }
-        public String getUrl(){ return this.url; }
+            return this.description;
+        }
+        public String getUrl(){ 
+            return this.url;
+        }
     }
