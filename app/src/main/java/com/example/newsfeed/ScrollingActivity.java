@@ -63,7 +63,7 @@ public class ScrollingActivity extends AppCompatActivity {
                     }
                     setView(newsData);
                 } catch (Exception e) {
-                    System.out.println("Logged from JsonObjectRequest() in NewsRestApi.java: " + e);
+                    System.out.println("Logged from JsonObjectRequest() in ScrollingActivity.java: " + e);
                 }
             }
         }, new Response.ErrorListener() {
