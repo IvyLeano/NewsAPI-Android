@@ -32,8 +32,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import android.content.Intent;
 
-import android.widget.LinearLayout.LayoutParams;
-
 public class ScrollingActivity extends AppCompatActivity {
 
     public String baseUrl = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=";
@@ -79,10 +77,9 @@ public class ScrollingActivity extends AppCompatActivity {
         // 3. add request to request queue
         requestQueue.add(jsonObjectRequest);
     }
-
+    // dynamically adds content to view
     public void setView(Vector data) {
         LinearLayout linearLayout = findViewById(R.id.linear_layout);
-
         for (int i = 0; i < data.size(); i++) {
             final NewsData newsData = (NewsData) data.get(i);
 
@@ -90,7 +87,6 @@ public class ScrollingActivity extends AppCompatActivity {
             title.setText(newsData.getTitle());
             title.setTextSize(14);
             title.setTextColor(Color.BLACK);
-//            title.setTypeface(null, Typeface.BOLD);
             linearLayout.addView(title);
 
             TextView author = new TextView(this);
@@ -99,28 +95,22 @@ public class ScrollingActivity extends AppCompatActivity {
             linearLayout.addView(author);
 
             ImageView imageView = new ImageView(this);
-            LinearLayout.LayoutParams parameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 310);
+            LinearLayout.LayoutParams parameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 600);
             Picasso.get().load(newsData.getUrlToImage()).into(imageView);
             imageView.setLayoutParams(parameters);
             linearLayout.addView(imageView);
 
             TextView description = new TextView(this);
-            description.setText(newsData.getDescription());
+            description.setText(newsData.getDescription() + " Click here for full article.\n");
+            description.setTextSize(12);
             linearLayout.addView(description);
 
-            Button more = new Button(this);
-            more.setText("Read More");
-
-            more.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View arg0) {
-                    Intent viewIntent =
-                            new Intent("android.intent.action.VIEW",
-                                    Uri.parse(newsData.getUrl()));
+            description.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse(newsData.getUrl()));
                     startActivity(viewIntent);
                 }
             });
-            linearLayout.addView(more);
-
         }
     }
 }
