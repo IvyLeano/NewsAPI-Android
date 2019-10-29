@@ -1,11 +1,8 @@
 package com.example.newsfeed;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -18,9 +15,9 @@ import com.android.volley.toolbox.Volley;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.net.Uri;
 import android.view.View;
-
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,6 +27,7 @@ import java.util.Vector;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
 import android.content.Intent;
 
 public class ScrollingActivity extends AppCompatActivity {
@@ -77,6 +75,7 @@ public class ScrollingActivity extends AppCompatActivity {
         // 3. add request to request queue
         requestQueue.add(jsonObjectRequest);
     }
+
     // dynamically adds content to view
     public void setView(Vector data) {
         LinearLayout linearLayout = findViewById(R.id.linear_layout);
@@ -102,7 +101,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
             TextView description = new TextView(this);
             description.setText(newsData.getDescription() + " Click here for full article.\n");
-            description.setTextSize(12);
+            description.setTextSize(11);
             linearLayout.addView(description);
 
             description.setOnClickListener(new View.OnClickListener() {
