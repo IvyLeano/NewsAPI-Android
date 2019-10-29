@@ -1,12 +1,12 @@
 package com.example.newsfeed;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Layout;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -87,12 +87,14 @@ public class ScrollingActivity extends AppCompatActivity {
 
             TextView title = new TextView(this);
             title.setText(newsData.getTitle());
-            title.setTextSize(20);
-            title.setTypeface(null, Typeface.BOLD);
+            title.setTextSize(14);
+            title.setTextColor(Color.BLACK);
+//            title.setTypeface(null, Typeface.BOLD);
             linearLayout.addView(title);
 
             TextView author = new TextView(this);
             author.setText(newsData.getName() + ", " + newsData.getAuthor());
+            author.setTextSize(12);
             linearLayout.addView(author);
 
             ImageView imageView = new ImageView(this);
